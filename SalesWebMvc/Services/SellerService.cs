@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using SalesWebMvc.Models;
 
+
 namespace SalesWebMvc.Services
 {
     public class SellerService
@@ -19,5 +20,12 @@ namespace SalesWebMvc.Services
         {
             return _context.Seller.ToList();
         }
+        public void Insert(Seller obj) 
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
+
+
     }
 }
